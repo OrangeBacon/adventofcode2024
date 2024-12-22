@@ -1,7 +1,11 @@
 use std::collections::HashMap;
 
-pub fn part1(input: &str) -> u32 {
-    let inp: Vec<Vec<i32>> = input
+pub fn run(input: &str) -> String {
+    format!("- Part 1: {}\n- Part 2: {}", part1(input), part2(input))
+}
+
+fn part1(input: &str) -> u64 {
+    let inp: Vec<Vec<u64>> = input
         .lines()
         .map(|l| l.split_whitespace().map(|n| n.parse().unwrap()).collect())
         .collect();
@@ -19,8 +23,8 @@ pub fn part1(input: &str) -> u32 {
     a.into_iter().zip(b).map(|(a, b)| a.abs_diff(b)).sum()
 }
 
-pub fn part2(input: &str) -> u32 {
-    let inp: Vec<Vec<u32>> = input
+fn part2(input: &str) -> u64 {
+    let inp: Vec<Vec<u64>> = input
         .lines()
         .map(|l| l.split_whitespace().map(|n| n.parse().unwrap()).collect())
         .collect();
